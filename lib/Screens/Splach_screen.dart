@@ -18,9 +18,12 @@ class _SplachScreenState extends State<SplachScreen>
 
   AnimationController? _controller;
   late final Animation<double>? _animation;
-
   @override
   void initState() {
+    Timer(
+        Duration(seconds: 6),
+            () => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (ctx) => HomeScreen())));
     _controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
@@ -40,11 +43,6 @@ class _SplachScreenState extends State<SplachScreen>
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    Timer(
-        Duration(seconds: 6),
-        () => Navigator.of(_scaffoldKey.currentContext!).push(MaterialPageRoute(
-            builder: (BuildContext context) => HomeScreen())));
 
     return Scaffold(
         key:_scaffoldKey,

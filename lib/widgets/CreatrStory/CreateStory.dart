@@ -57,6 +57,7 @@ class _Stories extends StatelessWidget {
               ? _myStoriew(context)
               : Stack(children: [
                   CachedNetworkImage(
+                    errorWidget: (_,s,w)=>Container(color: Colors.grey,),
                     imageUrl: story!.imagestory!,
                     width: 110.0,
                     height: MediaQuery.of(context).size.height * 0.30,
@@ -112,6 +113,7 @@ class _Stories extends StatelessWidget {
                       topRight: Radius.circular(16)),
                   child: CachedNetworkImage(
                     imageUrl: currentUser.image!,
+                    errorWidget: (_,s,w)=>Container(color: Colors.grey,),
                   ),
                 ),
               ),

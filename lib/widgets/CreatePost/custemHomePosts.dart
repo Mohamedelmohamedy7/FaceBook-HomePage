@@ -63,7 +63,9 @@ class CustemHomePost extends StatelessWidget {
             ),
             post!.imagecarsoul == null
                 ? (post?.image != null
-                    ? CachedNetworkImage(imageUrl: post!.image!)
+                    ? CachedNetworkImage(imageUrl: post!.image!,
+              errorWidget: (_,s,w)=>Container(color: Colors.grey,width: double.infinity,height: 350,),
+            )
                     : SizedBox.shrink())
                 : Container(
                     height:  ResponsiveUi.desxktopUi(context)?width * 0.44:
